@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  db:
+    build: ./db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: asd_db
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d asd_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    ports:
+      - "5432:5432"
+    networks:
+      - asd-network
+
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgresql://admin:admin@db:5432/asd_db
+      SECRET_KEY: supersecretkey
+      ALGORITHM: HS256
+
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+    networks:
+      - asd-network
+
+  frontend:
+    build: ./client
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - asd-network
+
+networks:
+  asd-network:
+    driver: bridge

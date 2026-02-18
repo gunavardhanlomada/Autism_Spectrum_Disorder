@@ -1,0 +1,332 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Light theme base */
+    --background: 40 30% 98%;
+    --foreground: 220 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 15%;
+
+    --primary: 173 58% 39%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 35 100% 95%;
+    --secondary-foreground: 35 80% 30%;
+
+    --muted: 220 15% 94%;
+    --muted-foreground: 220 10% 45%;
+
+    --accent: 35 95% 60%;
+    --accent-foreground: 35 90% 20%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 173 58% 39%;
+
+    --radius: 0.75rem;
+
+    /* Kids theme colors */
+    --kids-primary: 15 85% 60%;
+    --kids-primary-foreground: 0 0% 100%;
+    --kids-secondary: 45 95% 60%;
+    --kids-accent: 150 60% 50%;
+    --kids-background: 40 60% 98%;
+    --kids-card: 40 50% 99%;
+    --kids-gradient-start: 15 85% 65%;
+    --kids-gradient-end: 45 95% 55%;
+    
+    /* Adult theme colors */
+    --adult-primary: 173 58% 39%;
+    --adult-primary-foreground: 0 0% 100%;
+    --adult-secondary: 200 30% 95%;
+    --adult-accent: 200 60% 50%;
+    --adult-background: 200 20% 98%;
+    --adult-card: 0 0% 100%;
+    --adult-gradient-start: 173 58% 45%;
+    --adult-gradient-end: 200 60% 45%;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(220 20% 15% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(220 20% 15% / 0.1), 0 2px 4px -2px hsl(220 20% 15% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(220 20% 15% / 0.1), 0 4px 6px -4px hsl(220 20% 15% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(220 20% 15% / 0.1), 0 8px 10px -6px hsl(220 20% 15% / 0.1);
+    
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 25% 10%;
+    --foreground: 40 20% 95%;
+
+    --card: 220 25% 13%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 220 25% 13%;
+    --popover-foreground: 40 20% 95%;
+
+    --primary: 173 58% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 40 20% 90%;
+
+    --muted: 220 20% 18%;
+    --muted-foreground: 220 15% 60%;
+
+    --accent: 35 80% 55%;
+    --accent-foreground: 35 90% 95%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 173 58% 45%;
+
+    /* Kids theme colors - dark */
+    --kids-primary: 15 75% 55%;
+    --kids-primary-foreground: 0 0% 100%;
+    --kids-secondary: 45 85% 55%;
+    --kids-accent: 150 50% 45%;
+    --kids-background: 20 30% 12%;
+    --kids-card: 20 25% 15%;
+    --kids-gradient-start: 15 75% 55%;
+    --kids-gradient-end: 45 85% 50%;
+    
+    /* Adult theme colors - dark */
+    --adult-primary: 173 50% 45%;
+    --adult-primary-foreground: 0 0% 100%;
+    --adult-secondary: 200 20% 18%;
+    --adult-accent: 200 50% 50%;
+    --adult-background: 200 25% 10%;
+    --adult-card: 200 20% 14%;
+    --adult-gradient-start: 173 50% 40%;
+    --adult-gradient-end: 200 50% 45%;
+
+    /* Shadows - dark */
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.3);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.4), 0 2px 4px -2px hsl(0 0% 0% / 0.3);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.4), 0 4px 6px -4px hsl(0 0% 0% / 0.3);
+    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.4), 0 8px 10px -6px hsl(0 0% 0% / 0.3);
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Kids mode font */
+  .kids-mode {
+    font-family: 'Nunito', sans-serif;
+  }
+}
+
+@layer components {
+  /* Kids gradient button */
+  .btn-kids {
+    @apply relative overflow-hidden font-bold rounded-2xl px-8 py-4 text-white transition-all duration-300;
+    background: linear-gradient(135deg, hsl(var(--kids-gradient-start)), hsl(var(--kids-gradient-end)));
+    box-shadow: 0 4px 15px hsl(var(--kids-primary) / 0.4);
+  }
+  
+  .btn-kids:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px hsl(var(--kids-primary) / 0.5);
+  }
+  
+  .btn-kids:active {
+    transform: translateY(0);
+  }
+
+  /* Adult gradient button */
+  .btn-adult {
+    @apply relative overflow-hidden font-semibold rounded-xl px-6 py-3 text-white transition-all duration-200;
+    background: linear-gradient(135deg, hsl(var(--adult-gradient-start)), hsl(var(--adult-gradient-end)));
+    box-shadow: 0 2px 10px hsl(var(--adult-primary) / 0.3);
+  }
+  
+  .btn-adult:hover {
+    box-shadow: 0 4px 15px hsl(var(--adult-primary) / 0.4);
+  }
+
+  /* Card styles */
+  .card-kids {
+    @apply rounded-3xl p-6 transition-all duration-300;
+    background: hsl(var(--kids-card));
+    box-shadow: var(--shadow-lg);
+    border: 2px solid hsl(var(--kids-secondary) / 0.3);
+  }
+  
+  .card-kids:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .card-adult {
+    @apply rounded-2xl p-6 transition-all duration-200;
+    background: hsl(var(--adult-card));
+    box-shadow: var(--shadow-md);
+    border: 1px solid hsl(var(--border));
+  }
+  
+  .card-adult:hover {
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* Progress bar */
+  .progress-kids {
+    @apply h-4 rounded-full overflow-hidden;
+    background: hsl(var(--kids-secondary) / 0.3);
+  }
+  
+  .progress-kids-fill {
+    @apply h-full rounded-full transition-all duration-500 ease-out;
+    background: linear-gradient(90deg, hsl(var(--kids-gradient-start)), hsl(var(--kids-gradient-end)));
+  }
+
+  .progress-adult {
+    @apply h-2 rounded-full overflow-hidden;
+    background: hsl(var(--adult-secondary));
+  }
+  
+  .progress-adult-fill {
+    @apply h-full rounded-full transition-all duration-300;
+    background: linear-gradient(90deg, hsl(var(--adult-gradient-start)), hsl(var(--adult-gradient-end)));
+  }
+
+  /* Answer buttons */
+  .answer-btn-kids {
+    @apply w-full p-4 rounded-2xl font-bold text-lg transition-all duration-200 border-3;
+    border-color: hsl(var(--kids-secondary) / 0.4);
+    background: hsl(var(--kids-card));
+  }
+  
+  .answer-btn-kids:hover {
+    border-color: hsl(var(--kids-primary));
+    background: hsl(var(--kids-primary) / 0.1);
+    transform: scale(1.02);
+  }
+  
+  .answer-btn-kids.selected {
+    border-color: hsl(var(--kids-primary));
+    background: hsl(var(--kids-primary));
+    color: white;
+  }
+
+  .answer-btn-adult {
+    @apply w-full p-4 rounded-xl font-medium transition-all duration-200 border-2;
+    border-color: hsl(var(--border));
+    background: hsl(var(--adult-card));
+  }
+  
+  .answer-btn-adult:hover {
+    border-color: hsl(var(--adult-primary));
+    background: hsl(var(--adult-primary) / 0.05);
+  }
+  
+  .answer-btn-adult.selected {
+    border-color: hsl(var(--adult-primary));
+    background: hsl(var(--adult-primary));
+    color: white;
+  }
+
+  /* Speak button */
+  .speak-btn {
+    @apply inline-flex items-center justify-center w-12 h-12 rounded-full transition-all duration-200;
+    background: hsl(var(--primary) / 0.1);
+    color: hsl(var(--primary));
+  }
+  
+  .speak-btn:hover {
+    background: hsl(var(--primary) / 0.2);
+    transform: scale(1.1);
+  }
+  
+  .speak-btn.speaking {
+    animation: pulse-speak 1s infinite;
+  }
+
+  @keyframes pulse-speak {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4);
+    }
+    50% {
+      transform: scale(1.05);
+      box-shadow: 0 0 0 10px hsl(var(--primary) / 0);
+    }
+  }
+
+  /* Hero gradient */
+  .hero-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.1) 0%, hsl(var(--accent) / 0.1) 100%);
+  }
+
+  /* Floating animation for kids */
+  .float-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
