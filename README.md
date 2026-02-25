@@ -1,4 +1,4 @@
-# 🚀 Major Project
+# Autism Spectrum Disorder
 
 A full-stack web application built using modern technologies with Docker-based deployment.  
 The system consists of a frontend client, backend API, and PostgreSQL database.
